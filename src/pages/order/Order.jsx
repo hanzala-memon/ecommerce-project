@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import myContext from "../../context/data/myContext";
 import Layout from "../../components/layout/Layout";
 import Loader from "../../components/loader/Loader";
@@ -15,13 +15,13 @@ function Order() {
           <div className=" h-full pt-10">
             {order
               .filter((obj) => obj.userid == userid)
-              .map((order) => {
+              .map((order, index) => {
                 // order.cartItems.map()
                 return (
-                  <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
-                    {order.cartItems.map((item) => {
+                  <div key={index} className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+                    {order.cartItems.map((item, index) => {
                       return (
-                        <div className="rounded-lg md:w-2/3">
+                        <div key={index} className="rounded-lg md:w-2/3">
                           <div
                             className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
                             style={{

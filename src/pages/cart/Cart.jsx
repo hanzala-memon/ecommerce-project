@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import myContext from "../../context/data/myContext";
 import Layout from "../../components/layout/Layout";
 import Modal from "../../components/modal/Modal";
@@ -137,6 +137,7 @@ function Cart() {
               const { title, price, description, imageUrl } = item;
               return (
                 <div
+                  key={index}
                   className="justify-between mb-6 rounded-lg border  drop-shadow-xl bg-white p-6  sm:flex  sm:justify-start"
                   style={{
                     backgroundColor: mode === "dark" ? "rgb(32 33 34)" : "",
